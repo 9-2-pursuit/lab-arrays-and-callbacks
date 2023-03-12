@@ -73,6 +73,24 @@ const sortInAscendingNums = () => nums.sort((a, b) => (a < b ? -1 : 1));
 
 const sortInDescendingNums = () => nums.sort((a, b) => (b < a ? -1 : 1));
 
+const panagram = [
+  "The",
+  "quick",
+  "brown",
+  "fox",
+  "jumps",
+  "over",
+  "the",
+  "lazy",
+  "dog",
+];
+
+const isPanagram = () => {
+  const atoz = "abcdefghijklmnopqrstuvwxyz".split("");
+  const str = panagram.join("").toLowerCase();
+  return atoz.every((letter) => str.includes(letter));
+};
+
 module.exports = {
   isEveryNumGreaterThan2,
   isEveryWordShorterThan7,
