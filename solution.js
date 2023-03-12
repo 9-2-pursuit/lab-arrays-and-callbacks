@@ -69,6 +69,10 @@ const doSomeWordsHaveAnA = () => {
   return words.some((word) => word.includes("a"));
 };
 
+const sortInAscendingNums = () => nums.sort((a, b) => (a < b ? -1 : 1));
+
+const sortInDescendingNums = () => nums.sort((a, b) => (b < a ? -1 : 1));
+
 module.exports = {
   isEveryNumGreaterThan2,
   isEveryWordShorterThan7,
