@@ -1,4 +1,4 @@
-const { nums, words } = require("./data/data.js");
+const { nums, words, products } = require("./data/data.js");
 
 // Every
 const isEveryNumGreaterThan2 = (arr) => {
@@ -70,6 +70,95 @@ const areSomeNumsDivisibleBy7 = (arr) => {
 const doSomeWordsHaveAnA = (arr) => {
   return arr.some((word) => word.includes("a"));
 };
+
+// Reduce
+
+const sumArray = (arr) => {
+  return arr.reduce((acc, cur) => acc + cur, 0);
+};
+
+const concatenateWords = (arr) => {
+  return arr.reduce((acc, cur) => acc + cur, "");
+};
+
+// console.log(concatenateWords(words));
+
+// Sort
+
+const sortNumsAscending = (arr) => {
+  return arr.sort((a, b) => a - b);
+};
+
+const sortNumsDescending = (arr) => {
+  return arr.sort((a, b) => b - a);
+};
+
+const sortWordsAscending = (arr) => {
+  return arr.sort((a, b) => {
+    const wordA = a.toLowerCase();
+    const wordB = b.toLowerCase();
+    if (wordA < wordB) {
+      return -1;
+    } else if (wordA > wordB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+};
+
+const sortWordsDescending = (arr) => {
+  return arr.sort((a, b) => {
+    const wordA = a.toLowerCase();
+    const wordB = b.toLowerCase();
+    if (wordA < wordB) {
+      return 1;
+    } else if (wordA > wordB) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+};
+
+// console.log(sortNumsAscending(nums));
+// console.log(sortNumsDescending(nums));
+// console.log(sortWordsAscending(words));
+// console.log(sortWordsDescending(words));
+
+// isPanagram
+
+const isPanagram = (arr) => {
+  const lettersArr = "abcdefghijklmnopqrstuvwxyz".split("");
+  return lettersArr.every((letter) => {
+    return arr.some((word) => word.includes(letter));
+  });
+};
+
+// console.log(isPanagram(words));
+
+// Working with Data
+
+const productsWithPriceLessThanTen = (arr) => {
+  return arr.filter((product) => product.price < 10);
+};
+
+const sortProductByName = (arr) => {
+  return arr.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+
+    if (a.name > b.name) {
+      return 1;
+    }
+
+    return 0;
+  });
+};
+
+console.log(productsWithPriceLessThanTen(products));
+console.log(sortProductByName(products));
 
 module.exports = {
   isEveryNumGreaterThan2,
