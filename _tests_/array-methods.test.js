@@ -19,7 +19,7 @@ const {
 // Students tend to skip passing in a parameter in their solutions
 const { nums, words } = require("../data/data.js");
 
-describe("Array Methods", () => {
+describe.only("Array Methods", () => {
   test("Every number is greater than or equal to 2", () => {
     expect(/\.every/.test(isEveryNumGreaterThan2.toString())).toBe(true);
     expect(isEveryNumGreaterThan2(nums)).toBe(false);
