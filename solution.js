@@ -69,8 +69,69 @@ const doSomeWordsHaveAnA = (arr) => {
 return arr.some(el => el.includes("a"))
 };
 
+// Reduce
+
+// - Add all the numbers in the array together using the `reduce` method
+const addAllNums = (arr) => {
+return arr.reduce((a, b) => a + b, 0)
+}
+
+// - concatenate all the words using reduce
+const addAllWords = (arr) => {
+  return arr.reduce((a, b) => a + b)
+}
+
+//Sort 
+
+// - Try to sort without any arguments, do you get what you'd expect with the numbers array?
+const noArgSortNums = (arr) => {
+return arr.sort()
+}
+
+// - Try to sort without any arguments, do you get what you'd expect with the words array?
+const noArgSortWords = (arr) => {
+return arr.sort()
+}
+
+// - Sort the numbers in ascending order
+const sortNumsAsc = (arr) => {
+  return arr.sort((a, b) => a - b)
+}
+
+// - Sort the numbers in descending order
+const sortNumsDesc = (arr) => {
+  return arr.sort((a, b) => b - a)
+}
+
+// - Sort the words in ascending order
+const sortWordsAsc = (arr) => {
+  return arr.sort((a, b) => a - b)
+}
+
+// - Sort the words in descending order
+const sortWordsDesc = (arr) => {
+  return arr.sort((a, b) => b - a)
+}
+
+// - test whether each letter a-z (case insensitive) is used at least once
+const eachLetterUsed = (arr) => {
+    let regex = /([a-z])(?!.*\1)/g;
+    return (arr.split(" ").match(regex) || []).length === 26;
+}
+
+// - filter for products with a price that is less than 10, using the array below:
+const filterProd = (arr) => {
+  return arr.filter(({price}) => price < 10)
+}
+
+// - sort alphabetically by product name
+const sortProd = (arr) => {
+  return arr.sort((a, b) => (a.name < b.name) ? -1 : (a.name > b.name) ? 1: 0)
+}
+
+
 module.exports = {
-  isEveryNumGreaterThan2,
+ isEveryNumGreaterThan2,
   isEveryWordShorterThan7,
   arrayLessThan5,
   arrayOddLengthWords,
