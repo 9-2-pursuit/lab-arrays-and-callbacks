@@ -92,7 +92,38 @@ const doSomeWordsHaveAnA = (words) => {
 return words.some(word => word.includes('a'));
 };
 
+
+const reduceArr = (nums) => {
+return nums.reduce((acc, curr) => acc + curr)
+};
+console.log(reduceArr([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]))
+
+const conCat = (words) => {
+return words.reduce((acc, curr) => acc + curr)
+}
+console.log(conCat( [
+  "The",
+  "quick",
+  "brown",
+  "fox",
+  "jumps",
+  "over",
+  "the",
+  "lazy",
+  "dog",
+]))
+
+const sortNumbers = (nums) => {
+
+  let ref = nums;
+  return nums.sort() //No
+}
+console.log(sortNumbers([1, 3, 2, 4, 5, 6, 7, 8, 9, 10, 0]))
+
 module.exports = {
+  sortNumbers,
+  conCat,
+  reduceArr,
   isEveryNumGreaterThan2,
   isEveryWordShorterThan7,
   arrayLessThan5,
